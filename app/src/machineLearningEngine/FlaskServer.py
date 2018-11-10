@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 
 
-# TODO: waht does my end point look like?
 @app.route("/queries", methods=['GET', 'POST'])
 def run():
     return
