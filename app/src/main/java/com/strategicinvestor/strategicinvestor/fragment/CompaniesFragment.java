@@ -31,9 +31,9 @@ public class CompaniesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_companies, container, false);
-        Company company = new Company("APPL", "Apple", 200);
-        Company company1 = new Company("GOOGL", "Google", 150);
-        Company company2 = new Company("TLSA", "Tesla", 20);
+        Company company = new Company("APPL", "Apple", 200 ,false);
+        Company company1 = new Company("GOOGL", "Google", 150, false);
+        Company company2 = new Company("TLSA", "Tesla", 20, false);
         ArrayList<Company> allCompany = new ArrayList<>();
         allCompany.add(company);
         allCompany.add(company1);
@@ -41,7 +41,7 @@ public class CompaniesFragment extends Fragment {
 
         UserCompanyAdapter adapter = new UserCompanyAdapter(allCompany);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycle_view);
+        RecyclerView recyclerView = view.findViewById(R.id.recycle_view_companies);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
