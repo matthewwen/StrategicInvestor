@@ -1,6 +1,7 @@
 package com.strategicinvestor.strategicinvestor.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,10 +25,11 @@ public class CompaniesFragment extends Fragment {
         return new CompaniesFragment();
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_companies, container, false);
         Company company = new Company("APPL", "Apple", 200);
         Company company1 = new Company("GOOGL", "Google", 150);
         Company company2 = new Company("TLSA", "Tesla", 20);
@@ -38,15 +40,11 @@ public class CompaniesFragment extends Fragment {
 
         UserCompanyAdapter adapter = new UserCompanyAdapter(allCompany);
 
-        RecyclerView recyclerView = getView().findViewById(R.id.recycle_view);
+        RecyclerView recyclerView = view.findViewById(R.id.recycle_view);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_companies, container, false);
+        return view;
     }
 }
