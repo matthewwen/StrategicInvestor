@@ -6,15 +6,15 @@
     android:layout_marginTop="24dp">
 
     <TextView
-        android:id="@+id/ce_name_tv"
+        android:id="@+id/se_name_tv"
         android:text="Name of the company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <CheckBox
+        android:id="@+id/se_save_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-    
         />
 
 </LinearLayout>
