@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.strategicinvestor.strategicinvestor.R;
 import com.strategicinvestor.strategicinvestor.adapter.UserCompanyAdapter;
+import com.strategicinvestor.strategicinvestor.intrinio.PriceIntrinio;
 import com.strategicinvestor.strategicinvestor.object.Company;
 
 import java.util.ArrayList;
@@ -44,6 +45,8 @@ public class CompaniesFragment extends Fragment {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
+
+        PriceIntrinio.fetchPrice("AAPL");
 
         return view;
     }
