@@ -24,10 +24,10 @@ public class SearchCompanyAdapter extends RecyclerView.Adapter<SearchCompanyAdap
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public SearchCompanyViewModel onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.search_element_rv, viewGroup, false);
         return new SearchCompanyViewModel(view);
-    }
+}
 
     @Override
     public void onBindViewHolder(@NonNull SearchCompanyViewModel searchCompanyViewModel, int i) {
