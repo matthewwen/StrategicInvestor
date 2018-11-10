@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Strategies"
-        android:textSize="20sp"/>
+        android:textSize="28sp"
+        />
 
 </LinearLayout>
