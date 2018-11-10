@@ -7,14 +7,15 @@ public class Company {
     private String name;
     private String ticker;
     private double price;
+    private boolean waitlist;
 
-    public Company(String name, String ticker, double price)
+    public Company(String name, String ticker, double price, boolean waitlist)
     {
-        this.name = name; this.ticker = ticker; this.price = price;
+        this.name = name; this.ticker = ticker; this.price = price; this.waitlist = waitlist;
     }
 
     public Company(){
-        this("", "", 0);
+        this("", "", 0, false);
     }
 
     public double getPrice() {
@@ -27,5 +28,9 @@ public class Company {
 
     public String getTicker() {
         return ticker;
+    }
+
+    public boolean getWaitlist() {
+        return waitlist;
     }
 }

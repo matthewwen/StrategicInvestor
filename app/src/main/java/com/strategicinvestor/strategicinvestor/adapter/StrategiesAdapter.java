@@ -34,7 +34,7 @@ public class StrategiesAdapter extends RecyclerView.Adapter<StrategiesAdapter.St
 
     @Override
     public int getItemCount() {
-        return 0;
+        return allStrategies.size();
     }
 
     class StrategiesViewModel extends RecyclerView.ViewHolder{
