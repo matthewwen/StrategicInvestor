@@ -40,7 +40,7 @@ public class CompaniesFragment extends Fragment {
 
         UserCompanyAdapter adapter = new UserCompanyAdapter(allCompany);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycle_view);
+        RecyclerView recyclerView = view.findViewById(R.id.recycle_view_companies);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
