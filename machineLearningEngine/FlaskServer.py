@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # TODO: waht does my end point look like?
 @app.route("/test", methods=['GET', 'POST'])
-def run():
+def test():
     try:
         data = request.get_json
         response = {"message": "testing java-python connection"}
@@ -25,6 +25,7 @@ def run():
         return jsonify(response)
     except:
         return jsonify(error=404, exception=traceback.format_exc())
+
 
 if __name__ == "__main__":
     # app.run(debug=True, threaded=True)
