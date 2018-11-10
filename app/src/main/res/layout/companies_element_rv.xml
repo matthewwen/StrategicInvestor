@@ -1,27 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.strategicinvestor.strategicinvestor.companies_element_rv
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:background="#ccc"
-        android:paddingBottom="40dp"
-        android:paddingLeft="20dp">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
         <TextView
             android:id="@+id/ce_ticker_tv"
             android:text="Ticker Symbol"
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             />
 
         <TextView
             android:id="@+id/ce_name_tv"
-            android:text="Name of the company" />
+            android:text="Name of the company"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <TextView
             android:id="@+id/ce_price_tv"
-            android:text="Current price of the company" />
-    </com.strategicinvestor.strategicinvestor.companies_element_rv>
+            android:text="Current price of the company"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 </LinearLayout>
