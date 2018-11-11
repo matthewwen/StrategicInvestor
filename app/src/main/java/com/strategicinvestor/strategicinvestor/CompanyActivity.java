@@ -112,6 +112,7 @@ public class CompanyActivity extends AppCompatActivity {
                 y.setAxisLineColor(Color.WHITE);
 
                 chart.getAxisRight().setEnabled(false);
+                chart.getAxisLeft().setEnabled(true);
 
                 //chart.animateXY(2000, 2000);
 

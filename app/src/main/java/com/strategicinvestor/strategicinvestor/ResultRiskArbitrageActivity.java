@@ -15,6 +15,8 @@ import com.github.mikephil.charting.data.LineDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.strategicinvestor.strategicinvestor.intrinio.PriceIntrinio.fetchPrice90;
+
 public class ResultRiskArbitrageActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +33,8 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
 
         ArrayList<Double> val1 = new ArrayList<>();
         ArrayList<Double> val2 = new ArrayList<>();
+        ArrayList<Double> tick1Prices = fetchPrice90(tick1);
+        ArrayList<Double> tick2Prices = fetchPrice90(tick1);
 
         ////////////////////////
         val1.add(1.0);
@@ -69,16 +73,29 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         chart1.getAxisRight().setEnabled(false);
 
         List<Entry> entries1 = new ArrayList<>();
-        for (int i = 0; i < val1.size(); i++) {
-            // turn your data into Entry objects
-            entries1.add(new Entry((float)(i), (float)val1.get(i).doubleValue()));
+        List<Entry> entries2 = new ArrayList<>();
+        int i = 0;
+        for(int j = tick1Prices.size() - 1; j >=0; j--) {
+            entries1.add(new Entry((float) ++i, (float)tick1Prices.get(j).doubleValue()));
         }
-        LineDataSet dataSet = new LineDataSet(entries1, "Stock Price"); // add entries to dataset
+        int idx = 0;
+        for(int k = tick2Prices.size() - 1; k >=0; k--) {
+            entries2.add(new Entry((float) ++idx, (float)tick2Prices.get(k).doubleValue()));
+        }
+        LineDataSet dataSet = new LineDataSet(entries1, "Stock Price Company 1"); // add entries to dataset
         dataSet.setColor(R.color.colorPrimary);
         dataSet.setCircleColor(R.color.home_tab_selected_text_color);
 
+        LineDataSet dataSet3 = new LineDataSet(entries2, "Stock Price Company 2"); // add entries to dataset
+        dataSet3.setColor(Color.RED);
+        dataSet3.setCircleColor(Color.GREEN);
         LineData lineData1 = new LineData(dataSet);
         lineData1.setDrawValues(false);
+
+        LineData lineData3 = new LineData(dataSet3);
+        lineData3.setDrawValues(false);
+
+        chart1.setData(lineData3);
 
         chart1.setData(lineData1);
         chart1.invalidate(); // refresh
@@ -97,9 +114,9 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         chart2.getAxisRight().setEnabled(false);
 
         List<Entry> entries = new ArrayList<>();
-        for (int i = 0; i < val2.size(); i++) {
+        for (int w = 0; w < val2.size(); w++) {
             // turn your data into Entry objects
-            entries.add(new Entry((float)(i), (float)val2.get(i).doubleValue()));
+            entries.add(new Entry((float)(w), (float)val2.get(w).doubleValue()));
         }
         LineDataSet dataSet2 = new LineDataSet(entries, "Stock Price"); // add entries to dataset
         dataSet2.setColor(R.color.colorPrimary);
