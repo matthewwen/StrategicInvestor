@@ -38,4 +38,9 @@ public class Company {
     {
         this.price = price;
     }
+
+    public void setWaitList(boolean b)
+    {
+        this.waitlist = b;
+    }
 }
