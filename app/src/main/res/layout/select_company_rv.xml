@@ -8,6 +8,7 @@
     <TextView
         android:id="@+id/sc_name_tv"
         android:text="Name of the company"
+        android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"

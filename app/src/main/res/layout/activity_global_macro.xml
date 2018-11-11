@@ -15,10 +15,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="roboto"
             android:text="Global Macro"
             android:textColor="@color/home_tab_selected_text_color"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:paddingTop="20dp"
             android:layout_gravity="center"
             />
@@ -27,13 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="roboto"
             android:paddingLeft="20dp"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
             android:paddingRight="20dp"
-            android:text="A global macro strategy is a hedge fund or mutual fund strategy that bases its holdings — such as long and short positions in various equity, fixed income, currency, commodities and futures markets — primarily on the overall economic and political views of various countries or their macroeconomic principles."
-            android:textAlignment="center"
-            android:textColor="@color/home_tab_selected_text_color"
+            android:text="  A global macro strategy is a hedge fund or mutual fund strategy that bases its holdings — such as long and short positions in various equity, fixed income, currency, commodities and futures markets — primarily on the overall economic and political views of various countries or their macroeconomic principles."
+            android:textAlignment="gravity"
+            android:textColor="@color/home_tab_not_selected_text_color"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -80,9 +80,10 @@
             android:layout_width="111dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/colorPrimary"
-            android:fontFamily="sans-serif"
+            android:background="@color/colorAccent"
+            android:fontFamily="roboto"
             android:text="Analyze"
+            android:textSize="16sp"
             android:textColor="@color/white"
             android:typeface="normal" />
 
