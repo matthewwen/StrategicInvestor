@@ -1,5 +1,6 @@
 package com.strategicinvestor.strategicinvestor;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 //import com.github.mikephil.charting.data.LineData;
 //import com.github.mikephil.charting.data.LineDataSet;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,24 +39,57 @@ public class CompanyActivity extends AppCompatActivity {
     TextView volStock;
     TextView dividendStock;
 
+    ArrayList<Double> prices;
+    ArrayList<Double> otherData;
+
+    String tick;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
 
-        String tick = "";
+        tick = "";
         if (getIntent() != null)
         {
             tick = getIntent().getStringExtra("TICK_VALUE");
         }
 
+        tickerSym = findViewById(R.id.ticker_sym);
+        openPrice = findViewById(R.id.open_price);
+        closePrice = findViewById(R.id.close_price);
+        highPrice = findViewById(R.id.high_price);
+        lowPrice = findViewById(R.id.low_price);
+        volStock = findViewById(R.id.volume_of_stock);
+        dividendStock = findViewById(R.id.dividend_of_stock);
+        tickerSym.setText(tick);
 
-        Log.v(CompanyActivity.class.getSimpleName(), tick);
+        prices = new ArrayList<>();
+        otherData = new ArrayList<>();
+        @SuppressLint("StaticFieldLeak")
+        AsyncTask<Void, Void, Void> mAsync = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                prices = fetchPrice90(tick);
+                otherData = fetchOther(tick);
+                return null;
+            }
 
-        //AsyncTask<Void, Void, Void>
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                openPrice.setText(String.valueOf(otherData.get(0)));
+                highPrice.setText(String.valueOf(otherData.get(1)));
+                lowPrice.setText(String.valueOf(otherData.get(2)));
+                closePrice.setText(String.valueOf(otherData.get(3)));
+                volStock.setText(String.valueOf(otherData.get(4)));
+                dividendStock.setText(String.valueOf(otherData.get(5)));
+            }
+        };
 
-        ArrayList<Double> prices = fetchPrice90(tick);
-        ArrayList<Double> otherData = fetchOther(tick);
+        mAsync.execute();
+
+
 
 //        LineChart chart = (LineChart) findViewById(R.id.chart);
 //
@@ -64,20 +99,8 @@ public class CompanyActivity extends AppCompatActivity {
 //
 //        List<Entry> entries = new ArrayList<>();
 //        Collections.reverse(entries);
-        tickerSym = findViewById(R.id.ticker_sym);
-        openPrice = findViewById(R.id.open_price);
-        closePrice = findViewById(R.id.close_price);
-        highPrice = findViewById(R.id.high_price);
-        lowPrice = findViewById(R.id.low_price);
-        volStock = findViewById(R.id.volume_of_stock);
-        dividendStock = findViewById(R.id.dividend_of_stock);
-        tickerSym.setText(tick);
-        openPrice.setText(String.valueOf(otherData.get(0)));
-        highPrice.setText(String.valueOf(otherData.get(1)));
-        lowPrice.setText(String.valueOf(otherData.get(2)));
-        closePrice.setText(String.valueOf(otherData.get(3)));
-        volStock.setText(String.valueOf(otherData.get(4)));
-        dividendStock.setText(String.valueOf(otherData.get(5)));
+
+
 
 //        for (int i = 0; i < prices.size(); i++) {
 //

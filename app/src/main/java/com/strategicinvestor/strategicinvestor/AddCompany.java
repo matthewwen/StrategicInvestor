@@ -35,6 +35,10 @@ public class AddCompany extends AppCompatActivity implements Search.Listener, Se
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_company);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         editText = findViewById(R.id.editText);
         recyclerView = findViewById(R.id.search_load_rv);
         LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -52,6 +56,11 @@ public class AddCompany extends AppCompatActivity implements Search.Listener, Se
             {
                 Log.v(AddCompany.class.getSimpleName(), "Tap Here");
                 Search.algoliaQuery(editText.getText().toString(), this);
+                break;
+            }
+            case android.R.id.home: {
+                super.onBackPressed();
+                break;
             }
         }
 

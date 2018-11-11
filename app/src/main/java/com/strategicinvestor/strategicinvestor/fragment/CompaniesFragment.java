@@ -27,6 +27,7 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
 
     public static ArrayList<String> company_names = new ArrayList<>();
     public static ArrayList<String> company_ticks = new ArrayList<>();
+    private RecyclerView recyclerView;
 
     public CompaniesFragment() {
         // Required empty public constructor
@@ -42,6 +43,13 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_companies, container, false);
 
+        recyclerView = view.findViewById(R.id.recycle_view_companies);
+        update();
+
+        return view;
+    }
+
+    private void update(){
         TinyDB tinyDB = new TinyDB(getContext());
         company_names = tinyDB.getListString("theNames");
         company_ticks = tinyDB.getListString("theTicks");
@@ -67,7 +75,6 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                RecyclerView recyclerView = view.findViewById(R.id.recycle_view_companies);
                 LinearLayoutManager manager = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(manager);
                 final UserCompanyAdapter adapter = new UserCompanyAdapter(allCompany, CompaniesFragment.this);
@@ -75,8 +82,13 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
             }
         };
         asyncTask.execute();
+    }
 
-        return view;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        update();
     }
 
     @Override
@@ -84,5 +96,16 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
         Intent intent = new Intent(getContext(), CompanyActivity.class);
         intent.putExtra("TICK_VALUE", tick);
         startActivity(intent);
+    }
+
+    public static boolean haveTick(String tick)
+    {
+        for (int i = 0; i < company_ticks.size(); i++){
+            if (tick.equals(company_ticks.get(i))){
+                return true;
+            }
+        }
+
+        return false;
     }
 }

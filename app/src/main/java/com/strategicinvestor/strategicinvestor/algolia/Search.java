@@ -8,6 +8,7 @@ import com.algolia.search.saas.Client;
 import com.algolia.search.saas.CompletionHandler;
 import com.algolia.search.saas.Index;
 import com.algolia.search.saas.Query;
+import com.strategicinvestor.strategicinvestor.fragment.CompaniesFragment;
 import com.strategicinvestor.strategicinvestor.object.Company;
 
 import org.json.JSONArray;
@@ -32,7 +33,7 @@ public class Search {
                     String name = temp.getString("Company Name");
                     String tick = temp.getString("Symbol");
                     Log.v(Search.class.getSimpleName(), "Name: " + name);
-                    Company tempCompany = new Company(name, tick, 5, false);
+                    Company tempCompany = new Company(name, tick, 5, CompaniesFragment.haveTick(tick));
                     allComp.add(tempCompany);
                 }
                 listener.onResultRecieve(allComp);
