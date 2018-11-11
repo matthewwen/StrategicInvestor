@@ -4,7 +4,7 @@ import traceback
 app = Flask(__name__)
 
 
-# TODO: waht does my end point look like?
+# TODO: what does my end point look like?
 @app.route("/test", methods=['GET', 'POST'])
 def test():
     try:
@@ -16,7 +16,7 @@ def test():
 
 
 @app.route("/risk_arbitrage", methods=['GET', 'POST'])
-def run():
+def risk_arbitrage():
     try:
         data = request.get_json
         acquirer, acquiree = data["acquirer"], data["acquiree"]
