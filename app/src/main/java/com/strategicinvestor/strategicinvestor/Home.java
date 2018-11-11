@@ -12,12 +12,19 @@ import android.view.View;
 import com.strategicinvestor.strategicinvestor.algolia.Search;
 import com.strategicinvestor.strategicinvestor.fragment.FragmentPageAdapter;
 
+import java.util.ArrayList;
+
 public class Home extends AppCompatActivity {
+
+    public static ArrayList<String> company_names = new ArrayList<>();
+    public static ArrayList<String> company_ticks = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        TinyDB tinyDB = new TinyDB(Home.this);
 
         ViewPager pager = findViewById(R.id.home_vp);
         FragmentPagerAdapter pagerAdapter = new FragmentPageAdapter(getSupportFragmentManager());
