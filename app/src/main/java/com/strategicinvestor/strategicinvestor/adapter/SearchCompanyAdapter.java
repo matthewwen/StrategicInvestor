@@ -47,6 +47,7 @@ public class SearchCompanyAdapter extends RecyclerView.Adapter<SearchCompanyAdap
                 }
             }
         });
+
     }
 
     @Override
@@ -76,4 +77,5 @@ public class SearchCompanyAdapter extends RecyclerView.Adapter<SearchCompanyAdap
         void saveData(String tick, String name);
         void removeData(String tick, String name);
     }
+
 }

@@ -18,6 +18,7 @@ import android.widget.EditText;
 
 import com.strategicinvestor.strategicinvestor.adapter.SearchCompanyAdapter;
 import com.strategicinvestor.strategicinvestor.algolia.Search;
+import com.strategicinvestor.strategicinvestor.fragment.CompaniesFragment;
 import com.strategicinvestor.strategicinvestor.object.Company;
 
 import java.util.ArrayList;
@@ -70,22 +71,22 @@ public class AddCompany extends AppCompatActivity implements Search.Listener, Se
 
     @Override
     public void saveData(String tick, String name) {
-        Home.company_names.add(name);
-        Home.company_ticks.add(tick);
+        CompaniesFragment.company_names.add(name);
+        CompaniesFragment.company_ticks.add(tick);
         TinyDB tinyDB = new TinyDB(AddCompany.this);
-        tinyDB.putListString("theNames", Home.company_names);
-        tinyDB.putListString("theTicks", Home.company_ticks);
+        tinyDB.putListString("theNames", CompaniesFragment.company_names);
+        tinyDB.putListString("theTicks", CompaniesFragment.company_ticks);
 
         Log.v(AddCompany.class.getSimpleName(), "Save Data");
     }
 
     @Override
     public void removeData(String tick, String name) {
-        Home.company_names.remove(name);
-        Home.company_ticks.remove(tick);
+        CompaniesFragment.company_names.remove(name);
+        CompaniesFragment.company_ticks.remove(tick);
         TinyDB tinyDB = new TinyDB(AddCompany.this);
-        tinyDB.putListString("theNames", Home.company_names);
-        tinyDB.putListString("theTicks", Home.company_ticks);
+        tinyDB.putListString("theNames", CompaniesFragment.company_names);
+        tinyDB.putListString("theTicks", CompaniesFragment.company_ticks);
 
         Log.v(AddCompany.class.getSimpleName(), "Remove Data");
     }
