@@ -70,24 +70,13 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
                 for(int j = tick1Prices.size() - 1; j >=0; j--) {
                     entries1.add(new Entry((float) ++i, (float)tick1Prices.get(j).doubleValue()));
                 }
-                int idx = 0;
-                for(int k = tick2Prices.size() - 1; k >=0; k--) {
-                    entries2.add(new Entry((float) ++idx, (float)tick2Prices.get(k).doubleValue()));
-                }
+
                 LineDataSet dataSet = new LineDataSet(entries1, "Stock Price Company 1"); // add entries to dataset
                 dataSet.setColor(R.color.colorPrimary);
                 dataSet.setCircleColor(R.color.home_tab_selected_text_color);
 
-                LineDataSet dataSet3 = new LineDataSet(entries2, "Stock Price Company 2"); // add entries to dataset
-                dataSet3.setColor(Color.RED);
-                dataSet3.setCircleColor(Color.GREEN);
                 LineData lineData1 = new LineData(dataSet);
                 lineData1.setDrawValues(false);
-
-                LineData lineData3 = new LineData(dataSet3);
-                lineData3.setDrawValues(false);
-
-                chart1.setData(lineData3);
 
                 chart1.setData(lineData1);
                 chart1.invalidate(); // refresh
@@ -105,6 +94,21 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
                 y2.setAxisLineColor(Color.WHITE);
                 chart2.getAxisRight().setEnabled(false);
 
+                int idx = 0;
+                for(int k = tick2Prices.size() - 1; k >=0; k--) {
+                    entries2.add(new Entry((float) ++idx, (float)tick2Prices.get(k).doubleValue()));
+                }
+
+                LineDataSet dataSet3 = new LineDataSet(entries2, "Stock Price Company 2"); // add entries to dataset
+                dataSet3.setColor(Color.RED);
+                dataSet.setCircleColor(R.color.home_tab_selected_text_color);
+
+                LineData lineData3 = new LineData(dataSet3);
+                lineData3.setDrawValues(false);
+
+                chart2.setData(lineData3);
+                chart2.invalidate(); // refresh
+
                 ///////////////////////////////////
                 TextView textView = findViewById(R.id.possibility_merge_tv);
                 textView.setText(String.valueOf(15) + "%");
@@ -113,38 +117,5 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         mAsnyc.execute(); 
 
 
-    }
-
-    //set up for ibm
-    public ArrayList<Double> ibmRedHat1(){
-        ArrayList<Double> val1 = new ArrayList<>();
-        val1.add(1.0);
-        val1.add(2.0);
-        val1.add(3.0);
-        val1.add(4.0);
-        val1.add(5.0);
-        val1.add(6.0);
-        val1.add(7.0);
-        val1.add(8.0);
-        val1.add(9.0);
-        val1.add(10.0);
-
-        return val1;
-    }
-
-    public ArrayList<Double> ibmRedHat2(){
-        ArrayList<Double> val1 = new ArrayList<>();
-        val1.add(1.0);
-        val1.add(2.0);
-        val1.add(3.0);
-        val1.add(4.0);
-        val1.add(5.0);
-        val1.add(6.0);
-        val1.add(7.0);
-        val1.add(8.0);
-        val1.add(9.0);
-        val1.add(10.0);
-
-        return val1;
     }
 }
