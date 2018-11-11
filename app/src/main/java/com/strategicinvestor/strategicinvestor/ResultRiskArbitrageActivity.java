@@ -115,4 +115,37 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.possibility_merge_tv);
         textView.setText(String.valueOf(15) + "%");
     }
+
+    //set up for ibm
+    public ArrayList<Double> ibmRedHat1(){
+        ArrayList<Double> val1 = new ArrayList<>();
+        val1.add(1.0);
+        val1.add(2.0);
+        val1.add(3.0);
+        val1.add(4.0);
+        val1.add(5.0);
+        val1.add(6.0);
+        val1.add(7.0);
+        val1.add(8.0);
+        val1.add(9.0);
+        val1.add(10.0);
+
+        return val1;
+    }
+
+    public ArrayList<Double> ibmRedHat2(){
+        ArrayList<Double> val1 = new ArrayList<>();
+        val1.add(1.0);
+        val1.add(2.0);
+        val1.add(3.0);
+        val1.add(4.0);
+        val1.add(5.0);
+        val1.add(6.0);
+        val1.add(7.0);
+        val1.add(8.0);
+        val1.add(9.0);
+        val1.add(10.0);
+
+        return val1;
+    }
 }
