@@ -22,7 +22,6 @@
         </activity>
         <activity android:name=".CompanyActivity"></activity>
         <activity android:name=".AddCompany" />
-        <activity android:name=".PersonalFinance"></activity>
     </application>
 
 </manifest>

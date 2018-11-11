@@ -11,23 +11,23 @@
             android:orientation="vertical"
             android:layout_weight="1"
             >
-        <TextView
-            android:id="@+id/ce_ticker_tv"
-            android:text="Ticker Symbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
 
-            />
+            <TextView
+                android:id="@+id/ce_ticker_tv"
+                android:text="Ticker Symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                />
 
-        <TextView
-            android:id="@+id/ce_name_tv"
-            android:text="Name of the company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            <TextView
+                android:id="@+id/ce_name_tv"
+                android:text="Name of the company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                />
 
-            />
         </LinearLayout>
 
         <TextView
