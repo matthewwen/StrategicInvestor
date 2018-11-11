@@ -40,6 +40,12 @@ public class SearchCompanyAdapter extends RecyclerView.Adapter<SearchCompanyAdap
         return allCompany.size();
     }
 
+    public void setAllCompany(ArrayList<Company> allCompany)
+    {
+        this.allCompany = allCompany;
+        notifyDataSetChanged();
+    }
+
     class SearchCompanyViewModel extends RecyclerView.ViewHolder{
 
         TextView nameTV;
