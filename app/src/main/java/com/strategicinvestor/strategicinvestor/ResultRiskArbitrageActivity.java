@@ -71,7 +71,7 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
                     entries1.add(new Entry((float) ++i, (float)tick1Prices.get(j).doubleValue()));
                 }
 
-                LineDataSet dataSet = new LineDataSet(entries1, "Stock Price Company 1"); // add entries to dataset
+                LineDataSet dataSet = new LineDataSet(entries1, "Stock Price Acquirer"); // add entries to dataset
                 dataSet.setColor(Color.GREEN);
                 dataSet.setDrawCircles(false);
                 dataSet.setCircleColor(Color.GREEN);
@@ -100,7 +100,7 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
                     entries2.add(new Entry((float) ++idx, (float)tick2Prices.get(k).doubleValue()));
                 }
 
-                LineDataSet dataSet3 = new LineDataSet(entries2, "Stock Price Company 2"); // add entries to dataset
+                LineDataSet dataSet3 = new LineDataSet(entries2, "Stock Price Target"); // add entries to dataset
                 dataSet3.setColor(Color.RED);
                 dataSet3.setDrawCircles(false);
                 dataSet.setCircleColor(Color.RED);
