@@ -113,9 +113,14 @@ public class CompanyActivity extends AppCompatActivity {
                 //chart.animateXY(2000, 2000);
 
                 List<Entry> entries = new ArrayList<>();
-                for (int i = 0; i < prices.size(); i++) {
+                //for (int i = 0; i < prices.size(); i++) {
                     // turn your data into Entry objects
-                    entries.add(new Entry((float)(prices.size() - 1 - i), (float)prices.get(i).doubleValue()));
+                    //float xVal = (float)prices.size() - i;
+                //    entries.add(new Entry((float)i, (float)prices.get(i).doubleValue()));
+                //}
+                int i = 0;
+                for(int j = prices.size() - 1; j >=0; j--) {
+                    entries.add(new Entry((float) ++i, (float)prices.get(j).doubleValue()));
                 }
                 //Collections.reverse(entries);
                 LineDataSet dataSet = new LineDataSet(entries, "Stock Price"); // add entries to dataset
