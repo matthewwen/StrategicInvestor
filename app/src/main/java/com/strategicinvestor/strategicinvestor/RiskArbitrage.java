@@ -1,15 +1,11 @@
 package com.strategicinvestor.strategicinvestor;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.concurrent.TimeoutException;
 
 public class RiskArbitrage extends AppCompatActivity {
 
@@ -53,7 +49,7 @@ public class RiskArbitrage extends AppCompatActivity {
         btnLog1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentManual = new Intent(RiskArbitrage.this, SelectCompany.class);
+                Intent intentManual = new Intent(RiskArbitrage.this, SelectCompanyRiskArbitrage.class);
                 intentManual.putExtra("ACQ", 1);
                 intentManual.putExtra("SELECT1", selected1);
                 intentManual.putExtra("SELECT2", selected2);
@@ -72,7 +68,7 @@ public class RiskArbitrage extends AppCompatActivity {
         btnLog2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentManual = new Intent(RiskArbitrage.this, SelectCompany.class);
+                Intent intentManual = new Intent(RiskArbitrage.this, SelectCompanyRiskArbitrage.class);
                 intentManual.putExtra("ACQ", 2);
                 intentManual.putExtra("SELECT1", selected1);
                 intentManual.putExtra("SELECT2", selected2);

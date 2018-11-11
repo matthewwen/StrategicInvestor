@@ -32,9 +32,12 @@
             android:name=".RiskArbitrage"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SelectCompany"
+            android:name=".SelectCompanyRiskArbitrage"
             android:screenOrientation="portrait" />
-        <activity android:name=".ResultRiskArbitrageActivity"></activity>
+        <activity android:name=".ResultRiskArbitrageActivity" />
+        <activity android:name=".GlobalMacro" />
+        <activity android:name=".ResultGlobalMacroActivity" />
+        <activity android:name=".SelectCompanyGlobalMacro"></activity>
     </application>
 
 </manifest>

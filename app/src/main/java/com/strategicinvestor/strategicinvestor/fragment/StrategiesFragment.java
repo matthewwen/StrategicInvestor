@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.strategicinvestor.strategicinvestor.GlobalMacro;
 import com.strategicinvestor.strategicinvestor.R;
 import com.strategicinvestor.strategicinvestor.RiskArbitrage;
 import com.strategicinvestor.strategicinvestor.adapter.StrategiesAdapter;
@@ -61,6 +62,11 @@ public class StrategiesFragment extends Fragment implements StrategiesAdapter.Ch
         {
             case 0: {
                 Intent intent = new Intent(getContext(), RiskArbitrage.class);
+                startActivity(intent);
+                break;
+            }
+            case 1: {
+                Intent intent = new Intent(getContext(), GlobalMacro.class);
                 startActivity(intent);
                 break;
             }
