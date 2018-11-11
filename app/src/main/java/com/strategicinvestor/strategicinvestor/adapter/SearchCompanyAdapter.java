@@ -43,7 +43,7 @@ public class SearchCompanyAdapter extends RecyclerView.Adapter<SearchCompanyAdap
                     savedTick.saveData(allCompany.get(i).getTicker(), allCompany.get(i).getName());
                 }else{
                     allCompany.get(i).setWaitList(false);
-                    savedTick.removeData(allCompany.get(i).getTicker());
+                    savedTick.removeData(allCompany.get(i).getTicker(), allCompany.get(i).getName());
                 }
             }
         });
@@ -74,6 +74,6 @@ public class SearchCompanyAdapter extends RecyclerView.Adapter<SearchCompanyAdap
 
     public interface SavedTick{
         void saveData(String tick, String name);
-        void removeData(String tick);
+        void removeData(String tick, String name);
     }
 }
