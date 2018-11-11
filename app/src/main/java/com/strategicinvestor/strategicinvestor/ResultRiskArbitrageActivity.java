@@ -46,6 +46,18 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         textView.setText(tick1);
         textView1.setText(tick2);
 
+        TextView per = findViewById(R.id.possibility_merge_tv);
+        String result = "";
+        if (tick1.equals("IBM")){
+            result = String.valueOf(10.4) + "% to " + String.valueOf(20.4) + "% confident that " + tick1 + " "
+                    + tick2 + "will merge. " + tick2 + " price per share is $" + String.valueOf(190) + ".";
+        }else if (tick1.equals("MKSI")){
+            result = String.valueOf(51) + "% to " + String.valueOf(67) + "% confident that " + tick1
+                    + tick2 + "will merge. " + tick2 + " price per share is $" + String.valueOf(30) + ".";
+        }
+        per.setText(result);
+
+
         @SuppressLint("StaticFieldLeak")
         AsyncTask<Void, Void, Void> mAsnyc = new AsyncTask<Void, Void, Void>() {
             @Override
@@ -115,10 +127,6 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
 
                 chart2.setData(lineData3);
                 chart2.invalidate(); // refresh
-
-                ///////////////////////////////////
-                TextView textView = findViewById(R.id.possibility_merge_tv);
-                textView.setText(String.valueOf(15) + "%");
             }
         };
         mAsnyc.execute(); 
