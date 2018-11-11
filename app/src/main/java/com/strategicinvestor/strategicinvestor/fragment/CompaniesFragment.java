@@ -45,15 +45,11 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
         TinyDB tinyDB = new TinyDB(getContext());
         company_names = tinyDB.getListString("theNames");
         company_ticks = tinyDB.getListString("theTicks");
-        Company company = new Company("Apple","AAPL",  0 ,false);
-        Company company1 = new Company( "Google","GOOGL", 0, false);
-        Company company2 = new Company( "Tesla","TSLA", 0, false);
         final ArrayList<Company> allCompany = new ArrayList<>();
-        allCompany.add(company); allCompany.add(company1); allCompany.add(company2);
-//        for (int i = 0; i < company_names.size(); i++){
-//            Company company = new Company(company_names.get(i), company_ticks.get(i), 0, true);
-//            allCompany.add(company);
-//        }
+        for (int i = 0; i < company_names.size(); i++){
+            Company company = new Company(company_names.get(i), company_ticks.get(i), 0, true);
+            allCompany.add(company);
+        }
 
         @SuppressLint("StaticFieldLeak")
         AsyncTask<Void, Void, Void> asyncTask = new AsyncTask<Void, Void, Void>() {
