@@ -83,10 +83,13 @@ public class CompanyActivity extends AppCompatActivity {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 String priceAtOpen = "$" + String.valueOf(otherData.get(0));
+                String priceHigh = "$" + String.valueOf(otherData.get(1));
+                String priceLow = "$" + String.valueOf(otherData.get(2));
+                String priceAtClose = "$" + String.valueOf(otherData.get(3));
                 openPrice.setText(priceAtOpen);
-                highPrice.setText(String.valueOf(otherData.get(1)));
-                lowPrice.setText(String.valueOf(otherData.get(2)));
-                closePrice.setText(String.valueOf(otherData.get(3)));
+                highPrice.setText(priceHigh);
+                lowPrice.setText(priceLow);
+                closePrice.setText(priceAtClose);
                 volStock.setText(String.valueOf(otherData.get(4)));
                 dividendStock.setText(String.valueOf(otherData.get(5)));
 
