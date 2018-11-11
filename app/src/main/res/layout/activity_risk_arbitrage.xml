@@ -16,10 +16,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
+            android:fontFamily="roboto"
             android:text="Risk Arbitrage"
             android:textColor="@color/home_tab_selected_text_color"
-            android:textSize="30sp"
+            android:textSize="24dp"
             android:paddingTop="20dp"
             android:layout_gravity="center"
             />
@@ -29,13 +29,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-condensed"
-            android:paddingTop="20dp"
+            android:fontFamily="roboto"
             android:paddingLeft="20dp"
+            android:paddingTop="5dp"
             android:paddingRight="20dp"
-            android:text="Risk arbitrage an investment strategy to profit from the narrowing of a gap of the trading price of a target's stock and the acquirer's valuation of that stock in an intended takeover deal. In a stock-for-stock merger, risk arbitrage involves buying the shares of the target and selling short the shares of the acquirer."
-            android:textAlignment="center"
-            android:textColor="@color/home_tab_selected_text_color"
+            android:text="  Risk arbitrage is an investment strategy to profit from the narrowing of a gap of the trading price of a target's stock and the acquirer's valuation of that stock in an intended takeover deal. In a stock-for-stock merger, risk arbitrage involves buying the shares of the target and selling short the shares of the acquirer."
+            android:textAlignment="gravity"
+            android:textColor="@color/home_tab_not_selected_text_color"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -78,8 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="20dp"
             android:paddingLeft="20dp"
+            android:paddingTop="20dp"
             android:paddingRight="20dp"
             android:paddingBottom="80dp">
 
@@ -90,23 +90,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@color/colorPrimary"
-                android:fontFamily="sans-serif"
-                android:text="Select Target"
+                android:fontFamily="roboto"
+                android:text="Select   Target"
                 android:textColor="@color/home_tab_selected_text_color"
                 android:typeface="normal" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/editText2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:fontFamily="sans-serif-condensed"
                 android:padding="16dp"
-                android:fontFamily="sans-serif-condensed" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -116,11 +116,12 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:fontFamily="sans-serif"
             android:text="Analyze"
-            android:textColor="@color/home_tab_selected_text_color"
+            android:textColor="@color/white"
             android:typeface="normal"
+            android:textStyle="bold"
             android:layout_gravity="center"
             />
 
