@@ -1,10 +1,13 @@
 package com.strategicinvestor.strategicinvestor;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.strategicinvestor.strategicinvestor.algolia.Search;
 import com.strategicinvestor.strategicinvestor.fragment.FragmentPageAdapter;
@@ -30,7 +33,12 @@ public class Home extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(pager);
 
-        Search.algoliaQuery("Apple");
+        //Floating Action Button
+        FloatingActionButton button = findViewById(R.id.home_fb);
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, AddCompany.class);
+            startActivity(intent);
+        });
 
     }
 }
