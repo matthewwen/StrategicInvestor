@@ -23,6 +23,8 @@ import com.strategicinvestor.strategicinvestor.object.Company;
 
 import java.util.ArrayList;
 
+import static com.strategicinvestor.strategicinvestor.intrinio.PriceIntrinio.fetchPrice90;
+
 public class CompaniesFragment extends Fragment implements UserCompanyAdapter.UserTick{
 
     public static ArrayList<String> company_names = new ArrayList<>();
@@ -68,6 +70,12 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
                     double price = PriceIntrinio.fetchPrice1(allCompany.get(i).getTicker());
                     Log.v("Hello", "Ticker: " + allCompany.get(i).getTicker() + "," + String.valueOf(price));
                     allCompany.get(i).setPrice(price);
+                    ArrayList<Double> prices90 = fetchPrice90(allCompany.get(i).getTicker());
+                    if(prices90.get(0) < prices90.get(1)) {
+                        allCompany.get(i).setColor(-1);
+                    } else if(prices90.get(0) > prices90.get(1)) {
+                        allCompany.get(i).setColor(1);
+                    }
                 }
                 return null;
             }

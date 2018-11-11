@@ -1,5 +1,6 @@
 package com.strategicinvestor.strategicinvestor.adapter;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,6 +37,11 @@ public class UserCompanyAdapter extends RecyclerView.Adapter<UserCompanyAdapter.
         userCompanyViewModel.tickerTV.setText(allCompany.get(i).getTicker());
         userCompanyViewModel.nameTV.setText(allCompany.get(i).getName());
         userCompanyViewModel.priceTV.setText(String.valueOf(allCompany.get(i).getPrice()));
+        if(allCompany.get(i).getColor() >= 1) {
+            userCompanyViewModel.priceTV.setTextColor(Color.GREEN);
+        } else if(allCompany.get(i).getColor() <= 1) {
+            userCompanyViewModel.priceTV.setTextColor(Color.RED);
+        }
         userCompanyViewModel.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

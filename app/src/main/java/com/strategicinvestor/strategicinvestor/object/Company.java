@@ -26,6 +26,10 @@ public class Company {
         return name;
     }
 
+    public int getColor() {
+        return color;
+    }
+
     public String getTicker() {
         return ticker;
     }
