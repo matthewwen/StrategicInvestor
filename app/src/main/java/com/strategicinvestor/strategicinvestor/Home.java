@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.strategicinvestor.strategicinvestor.algolia.Search;
 import com.strategicinvestor.strategicinvestor.fragment.FragmentPageAdapter;
 
 public class Home extends AppCompatActivity {
@@ -28,6 +29,8 @@ public class Home extends AppCompatActivity {
         tabLayout.setTabTextColors(color[2], color[1]);
 
         tabLayout.setupWithViewPager(pager);
+
+        Search.algoliaQuery("Apple");
 
     }
 }

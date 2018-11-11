@@ -63,7 +63,6 @@ public class CompaniesFragment extends Fragment {
                 recyclerView.setAdapter(adapter);
             }
         };
-
         asyncTask.execute();
 
 
