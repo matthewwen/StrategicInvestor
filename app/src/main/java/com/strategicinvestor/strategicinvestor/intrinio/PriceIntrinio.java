@@ -59,10 +59,12 @@ public class PriceIntrinio {
 
         Uri uri = Uri.parse(BASE_URL);
         Uri.Builder builder = uri.buildUpon();
-        builder.appendQueryParameter(START_DATE, format.format(new Date()));
+        builder.appendQueryParameter(START_DATE, format.format(Calendar.getInstance().getTimeInMillis() - TimeUnit.DAYS.toMillis(5)));
         builder.appendQueryParameter(IDENTIFIER, ticker);
         builder.appendQueryParameter(FREQUENCY, "daily");
         builder.appendQueryParameter(AUTHENTICATION, KEY);
+
+        Log.v("The URL", builder.toString());
 
         URL url = createURL(builder.toString());
 
@@ -95,8 +97,6 @@ public class PriceIntrinio {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        Log.v(TAG, "all tracks");
 
         return allPrice;
     }
