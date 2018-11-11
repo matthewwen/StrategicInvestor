@@ -28,10 +28,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-condensed"
-            android:paddingTop="20dp"
             android:paddingLeft="20dp"
+            android:paddingTop="20dp"
             android:paddingRight="20dp"
-            android:text="insert bs"
+            android:text="A global macro strategy is a hedge fund or mutual fund strategy that bases its holdings — such as long and short positions in various equity, fixed income, currency, commodities and futures markets — primarily on the overall economic and political views of various countries or their macroeconomic principles."
             android:textAlignment="center"
             android:textColor="@color/home_tab_selected_text_color"
             android:textSize="18sp" />
@@ -43,6 +43,7 @@
             android:paddingTop="40dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:paddingBottom="70dp"
             >
 
             <Button
@@ -53,8 +54,8 @@
                 android:layout_gravity="center_vertical"
                 android:background="@color/colorPrimary"
                 android:fontFamily="sans-serif"
-                android:text="Select Acquirer"
-                android:textColor="@color/home_tab_selected_text_color"
+                android:text="Select Company"
+                android:textColor="@color/white"
                 android:typeface="normal" />
 
             <View
@@ -78,13 +79,12 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif"
             android:text="Analyze"
-            android:textColor="@color/home_tab_selected_text_color"
-            android:typeface="normal"
-            android:layout_gravity="center"
-            />
+            android:textColor="@color/white"
+            android:typeface="normal" />
 
     </LinearLayout>
 

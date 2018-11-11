@@ -5,9 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".fragment.StrategiesFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycle_view_strategies"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Based on your expenditure behaviour, we suggest that you opt for either the S&amp;P 500 Strategy or the Buy TLT Strategy"
+            android:textAlignment="center"
+            android:textColor="@color/home_tab_selected_text_color"
+            android:textSize="18sp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view_strategies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

@@ -56,7 +56,7 @@
                 android:background="@color/colorPrimary"
                 android:fontFamily="sans-serif"
                 android:text="Select Acquirer"
-                android:textColor="@color/home_tab_selected_text_color"
+                android:textColor="@color/white"
                 android:typeface="normal" />
 
             <View
@@ -92,7 +92,7 @@
                 android:background="@color/colorPrimary"
                 android:fontFamily="roboto"
                 android:text="Select   Target"
-                android:textColor="@color/home_tab_selected_text_color"
+                android:textColor="@color/white"
                 android:typeface="normal" />
 
             <View
@@ -116,14 +116,13 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
             android:fontFamily="sans-serif"
             android:text="Analyze"
             android:textColor="@color/white"
-            android:typeface="normal"
             android:textStyle="bold"
-            android:layout_gravity="center"
-            />
+            android:typeface="normal" />
 
 
     </LinearLayout>
