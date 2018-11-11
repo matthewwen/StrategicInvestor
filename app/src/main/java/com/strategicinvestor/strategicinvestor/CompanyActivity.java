@@ -28,6 +28,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +118,8 @@ public class CompanyActivity extends AppCompatActivity {
                 }
                 //Collections.reverse(entries);
                 LineDataSet dataSet = new LineDataSet(entries, "Stock Price"); // add entries to dataset
+                dataSet.setColor(R.color.colorPrimary);
+                dataSet.setCircleColor(R.color.home_tab_selected_text_color);
                 //dataSet.setColor(...);
                 //dataSet.setValueTextColor(...);
 
@@ -130,11 +133,6 @@ public class CompanyActivity extends AppCompatActivity {
         };
 
         mAsync.execute();
-
-
-
-
-
     }
 
 }

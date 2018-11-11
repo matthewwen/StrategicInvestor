@@ -9,10 +9,9 @@
         <item name="actionBarStyle">@style/ActionBarStyle</item>
     </style>
 
-    <style name="ActionBarStyle" parent="Base.Widget.AppCompat.ActionBar">
+    <style name="ActionBarStyle" parent="Base.Widget.AppCompat.Light.ActionBar">
         <item name="elevation">0dp</item>
         <item name="background">@color/colorPrimary</item>
-
     </style>
 
 
