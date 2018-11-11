@@ -41,6 +41,11 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
             tick2 = getIntent().getStringExtra("TICK2");
         }
 
+        TextView textView = findViewById(R.id.rra_tick1);
+        TextView textView1 = findViewById(R.id.rra_tick2);
+        textView.setText(tick1);
+        textView1.setText(tick2);
+
         @SuppressLint("StaticFieldLeak")
         AsyncTask<Void, Void, Void> mAsnyc = new AsyncTask<Void, Void, Void>() {
             @Override
