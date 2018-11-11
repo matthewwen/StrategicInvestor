@@ -9,6 +9,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,16 +22,17 @@ public class CompanyActivity extends AppCompatActivity {
 
         LineChart chart = (LineChart) findViewById(R.id.chart);
 
-        HashMap<Float, Float> map = new HashMap<>();
+        ArrayList<Float> prices = new ArrayList<>();
 
         //YourData[] dataObjects = ...;
 
-        List<Entry> entries = new ArrayList<Entry>();
+        List<Entry> entries = new ArrayList<>();
+        Collections.reverse(entries);
 
-        for (Float key : map.keySet()) {
-            map.get(key);
+        for (int i = 0; i < prices.size(); i++) {
+
             // turn your data into Entry objects
-            entries.add(new Entry(map.get(key), key));
+            entries.add(new Entry(prices.get(i), (float)(i)));
         }
 /*
         LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
