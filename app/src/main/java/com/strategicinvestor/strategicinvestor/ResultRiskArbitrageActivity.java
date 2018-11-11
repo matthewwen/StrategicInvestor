@@ -49,11 +49,11 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         TextView per = findViewById(R.id.possibility_merge_tv);
         String result = "";
         if (tick1.equals("IBM")){
-            result = String.valueOf(10.4) + "% to " + String.valueOf(20.4) + "% confident that " + tick1 + " "
-                    + tick2 + "will merge. " + tick2 + " price per share is $" + String.valueOf(190) + ".";
+            result = String.valueOf(14.4) + "% to " + String.valueOf(17.2) + "% chance that " + tick1 + " "
+                    + tick2 + " will merge with " + tick2 + ". IBM's target price for RHT is $" + String.valueOf(190) + "/share.";
         }else if (tick1.equals("MKSI")){
-            result = String.valueOf(51) + "% to " + String.valueOf(67) + "% confident that " + tick1
-                    + tick2 + "will merge. " + tick2 + " price per share is $" + String.valueOf(30) + ".";
+            result = String.valueOf(51.3) + "% to " + String.valueOf(60.9) + "% chance that " + tick1
+                    + tick2 + " will merge with " + tick2 + ". MSKI's target price for ESIO is $" + String.valueOf(30) + "/share.";
         }
         per.setText(result);
 
