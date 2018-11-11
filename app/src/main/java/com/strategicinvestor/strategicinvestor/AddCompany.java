@@ -41,9 +41,6 @@ public class AddCompany extends AppCompatActivity implements Search.Listener{
         adapter = new SearchCompanyAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
 
-        String ex = "Apple";
-        Search.algoliaQuery(ex, this);
-
     }
 
     @Override
