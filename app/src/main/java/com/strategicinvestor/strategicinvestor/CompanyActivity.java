@@ -129,6 +129,7 @@ public class CompanyActivity extends AppCompatActivity {
                 //Collections.reverse(entries);
                 LineDataSet dataSet = new LineDataSet(entries, "Stock Price"); // add entries to dataset
                 dataSet.setColor(R.color.colorPrimary);
+                dataSet.setDrawCircles(false);
                 dataSet.setCircleColor(R.color.home_tab_selected_text_color);
                 //dataSet.setColor(...);
                 //dataSet.setValueTextColor(...);
