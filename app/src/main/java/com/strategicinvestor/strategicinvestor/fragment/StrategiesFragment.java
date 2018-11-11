@@ -41,11 +41,11 @@ public class StrategiesFragment extends Fragment implements StrategiesAdapter.Ch
         View view =  inflater.inflate(R.layout.fragment_strategies, container, false);
 
         ArrayList<String> allStrategies = new ArrayList<>();
-        allStrategies.add("Risk Arbitrage");
-        allStrategies.add("Global Macro");
-        allStrategies.add("Momentum Trading");
-        allStrategies.add("Pro: S&P 500");
-        allStrategies.add("Pro: Buy TLT");
+        allStrategies.add("Pro: Risk Arbitrage");
+        allStrategies.add("Pro: Global Macro");
+        allStrategies.add("Pro: Momentum Trading");
+        allStrategies.add("S&P 500");
+        allStrategies.add("Buy TLT");
 
         StrategiesAdapter adapter = new StrategiesAdapter(allStrategies, this);
 
