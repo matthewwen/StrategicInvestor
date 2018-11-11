@@ -65,5 +65,7 @@ public class SelectCompany extends AppCompatActivity implements SelectCompanyAda
 
         startActivity(intent);
 
+        finish();
+
     }
 }
