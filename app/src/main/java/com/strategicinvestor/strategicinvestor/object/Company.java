@@ -33,4 +33,9 @@ public class Company {
     public boolean getWaitlist() {
         return waitlist;
     }
+
+    public void setPrice(double price)
+    {
+        this.price = price;
+    }
 }
