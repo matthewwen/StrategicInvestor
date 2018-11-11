@@ -2,7 +2,6 @@ package com.strategicinvestor.strategicinvestor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 //import com.github.mikephil.charting.charts.LineChart;
 //import com.github.mikephil.charting.data.Entry;
@@ -19,23 +18,21 @@ public class CompanyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
 
-        String tick = "";
-        if (getIntent() != null){
-            tick = getIntent().getStringExtra("TICK_VALUE");
-        }
-
         //LineChart chart = (LineChart) findViewById(R.id.chart);
         /*
         YourData[] dataObjects = ...;
 
-        List<Entry> entries = new ArrayList<Entry>();
+        //YourData[] dataObjects = ...;
 
-        for (YourData data : dataObjects) {
+        List<Entry> entries = new ArrayList<>();
+        Collections.reverse(entries);
+
+        for (int i = 0; i < prices.size(); i++) {
 
             // turn your data into Entry objects
-            entries.add(new Entry(data.getValueX(), data.getValueY()));
+            entries.add(new Entry(prices.get(i), (float)(i)));
         }
-
+/*
         LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
         dataSet.setColor(...);
         dataSet.setValueTextColor(...);
