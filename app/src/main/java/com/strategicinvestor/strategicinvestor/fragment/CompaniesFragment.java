@@ -85,4 +85,15 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
         intent.putExtra("TICK_VALUE", tick);
         startActivity(intent);
     }
+
+    public static boolean haveTick(String tick)
+    {
+        for (int i = 0; i < company_ticks.size(); i++){
+            if (tick.equals(company_ticks.get(i))){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
