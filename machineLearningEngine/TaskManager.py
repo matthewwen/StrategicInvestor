@@ -1,3 +1,8 @@
+'''
+TaskManager.py
+Receives information about the stock information and does an appropriate task
+'''
+
 from machineLearningEngine.Strategy import StrategyFactory
 
 

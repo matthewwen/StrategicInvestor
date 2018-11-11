@@ -1,6 +1,11 @@
 import pandas as pd
 import abc
 
+'''
+DataWrapper.py
+Factory pattern methods for DataWrapper classes. DataWrapper class should be wrapper classes for data required to train ML models 
+for specific strategies
+'''
 
 class DataWrapper(metaclass=abc.ABCMeta):
     """

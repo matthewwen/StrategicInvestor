@@ -5,6 +5,12 @@ import numpy as np
 from math import atan
 import abc
 
+'''
+Strategy.py
+Factory pattern classes to create wrapper classes for investment strategies. 
+Each strategy contains DataWrapper class and ML algorithm as functions
+'''
+
 
 class Strategy(metaclass=abc.ABCMeta):
     """

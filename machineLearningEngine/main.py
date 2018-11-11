@@ -1,7 +1,13 @@
 from machineLearningEngine.TaskManager import TaskManager
-import numpy as np
 import plotly.offline as py
 import plotly.graph_objs as go
+
+'''
+main.py
+Just a script to run the ML algorithm.
+prints cross-validation error, and trained model parameters
+also shows histogram of cross-validation errors using 
+'''
 
 
 errors = list()
