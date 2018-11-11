@@ -83,10 +83,13 @@ public class CompanyActivity extends AppCompatActivity {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 String priceAtOpen = "$" + String.valueOf(otherData.get(0));
+                String priceHigh = "$" + String.valueOf(otherData.get(1));
+                String priceLow = "$" + String.valueOf(otherData.get(2));
+                String priceAtClose = "$" + String.valueOf(otherData.get(3));
                 openPrice.setText(priceAtOpen);
-                highPrice.setText(String.valueOf(otherData.get(1)));
-                lowPrice.setText(String.valueOf(otherData.get(2)));
-                closePrice.setText(String.valueOf(otherData.get(3)));
+                highPrice.setText(priceHigh);
+                lowPrice.setText(priceLow);
+                closePrice.setText(priceAtClose);
                 volStock.setText(String.valueOf(otherData.get(4)));
                 dividendStock.setText(String.valueOf(otherData.get(5)));
 
@@ -113,9 +116,14 @@ public class CompanyActivity extends AppCompatActivity {
                 //chart.animateXY(2000, 2000);
 
                 List<Entry> entries = new ArrayList<>();
-                for (int i = 0; i < prices.size(); i++) {
+                //for (int i = 0; i < prices.size(); i++) {
                     // turn your data into Entry objects
-                    entries.add(new Entry((float)(prices.size() - 1 - i), (float)prices.get(i).doubleValue()));
+                    //float xVal = (float)prices.size() - i;
+                //    entries.add(new Entry((float)i, (float)prices.get(i).doubleValue()));
+                //}
+                int i = 0;
+                for(int j = prices.size() - 1; j >=0; j--) {
+                    entries.add(new Entry((float) ++i, (float)prices.get(j).doubleValue()));
                 }
                 //Collections.reverse(entries);
                 LineDataSet dataSet = new LineDataSet(entries, "Stock Price"); // add entries to dataset
