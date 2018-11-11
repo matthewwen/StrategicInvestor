@@ -44,8 +44,8 @@ public class StrategiesFragment extends Fragment implements StrategiesAdapter.Ch
         allStrategies.add("Risk Arbitrage");
         allStrategies.add("Global Macro");
         allStrategies.add("Momentum Trading");
-        allStrategies.add("S&P 500");
-        allStrategies.add("Buy TLT");
+        allStrategies.add("Pro: S&P 500");
+        allStrategies.add("Pro: Buy TLT");
 
         StrategiesAdapter adapter = new StrategiesAdapter(allStrategies, this);
 
