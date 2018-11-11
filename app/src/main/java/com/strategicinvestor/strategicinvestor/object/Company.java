@@ -1,6 +1,5 @@
 package com.strategicinvestor.strategicinvestor.object;
 
-import android.content.ComponentName;
 
 public class Company {
 
@@ -8,6 +7,7 @@ public class Company {
     private String ticker;
     private double price;
     private boolean waitlist;
+    private int color;
 
     public Company(String name, String ticker, double price, boolean waitlist)
     {
@@ -33,4 +33,20 @@ public class Company {
     public boolean getWaitlist() {
         return waitlist;
     }
+
+    public void setPrice(double price)
+    {
+        this.price = price;
+    }
+
+    public void setWaitList(boolean b)
+    {
+        this.waitlist = b;
+    }
+
+    public void setColor(int color)
+    {
+        this.color = color;
+    }
+
 }

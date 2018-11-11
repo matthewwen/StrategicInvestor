@@ -16,10 +16,12 @@ import java.util.ArrayList;
 public class UserCompanyAdapter extends RecyclerView.Adapter<UserCompanyAdapter.UserCompanyViewModel> {
 
     private ArrayList<Company> allCompany;
+    private UserTick userTick;
 
-    public UserCompanyAdapter(ArrayList<Company> allCompany)
+    public UserCompanyAdapter(ArrayList<Company> allCompany, UserTick userTick)
     {
         this.allCompany = allCompany;
+        this.userTick = userTick;
     }
 
     @NonNull
@@ -34,6 +36,12 @@ public class UserCompanyAdapter extends RecyclerView.Adapter<UserCompanyAdapter.
         userCompanyViewModel.tickerTV.setText(allCompany.get(i).getTicker());
         userCompanyViewModel.nameTV.setText(allCompany.get(i).getName());
         userCompanyViewModel.priceTV.setText(String.valueOf(allCompany.get(i).getPrice()));
+        userCompanyViewModel.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userTick.passTick(allCompany.get(i).getTicker());
+            }
+        });
     }
 
     @Override
@@ -46,12 +54,18 @@ public class UserCompanyAdapter extends RecyclerView.Adapter<UserCompanyAdapter.
         TextView tickerTV;
         TextView nameTV;
         TextView priceTV;
+        View view;
 
         UserCompanyViewModel(@NonNull View itemView) {
             super(itemView);
             tickerTV = itemView.findViewById(R.id.ce_ticker_tv);
             nameTV = itemView.findViewById(R.id.ce_name_tv);
             priceTV = itemView.findViewById(R.id.ce_price_tv);
+            view = itemView;
         }
+    }
+
+    public interface UserTick{
+        void passTick(String tick);
     }
 }

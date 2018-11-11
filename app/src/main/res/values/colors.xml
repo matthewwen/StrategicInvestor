@@ -3,6 +3,7 @@
     <color name="colorPrimary">#ffaf03</color>
     <color name="colorPrimaryDark">#ffaf03</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
 
     <color name="home_tab_indicator_color">#000</color>
     <color name="home_tab_selected_text_color">#000000</color>
