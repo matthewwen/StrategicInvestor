@@ -1,6 +1,5 @@
 package com.strategicinvestor.strategicinvestor.object;
 
-import android.content.ComponentName;
 
 public class Company {
 

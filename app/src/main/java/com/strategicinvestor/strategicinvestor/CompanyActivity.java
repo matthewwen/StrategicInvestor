@@ -2,6 +2,7 @@ package com.strategicinvestor.strategicinvestor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 //import com.github.mikephil.charting.charts.LineChart;
 //import com.github.mikephil.charting.data.Entry;
@@ -17,6 +18,11 @@ public class CompanyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
+
+        String tick = "";
+        if (getIntent() != null){
+            tick = getIntent().getStringExtra("TICK_VALUE");
+        }
 
         //LineChart chart = (LineChart) findViewById(R.id.chart);
         /*

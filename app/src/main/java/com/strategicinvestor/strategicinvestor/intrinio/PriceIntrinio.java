@@ -26,7 +26,7 @@ public class PriceIntrinio {
     private static final String AUTHENTICATION = "api_key";
     private static final String IDENTIFIER = "identifier";
     private static final String FREQUENCY = "frequency";
-    private static final String KEY = "OmIzY2ExZjFhMjJkYWRkODJhZjUyMzdhYjcxYmI1MWZl";
+    private static final String KEY = "OjNmYTdiZTVlYTExNTAxYTEzN2RhNTM1ZTZlMGM2NDhi";
     private static final String START_DATE = "start_date";
 
     private static final String TAG = PriceIntrinio.class.getSimpleName();
@@ -52,6 +52,31 @@ public class PriceIntrinio {
             jsonData = "";
         }
         return extractPrice(jsonData);
+    }
+
+    public static ArrayList<Double> fetchOther(String ticker){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
+        Uri uri = Uri.parse(BASE_URL);
+        Uri.Builder builder = uri.buildUpon();
+        builder.appendQueryParameter(START_DATE, format.format(Calendar.getInstance().getTimeInMillis() - TimeUnit.DAYS.toMillis(5)));
+        builder.appendQueryParameter(IDENTIFIER, ticker);
+        builder.appendQueryParameter(FREQUENCY, "daily");
+        builder.appendQueryParameter(AUTHENTICATION, KEY);
+
+        Log.v("The URL", builder.toString());
+
+        URL url = createURL(builder.toString());
+
+        String jsonData;
+        try {
+            jsonData = makeHttpRequest(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+            jsonData = "";
+        }
+        return extractOther(jsonData);
+
     }
 
     public static double fetchPrice1(String ticker){
@@ -82,6 +107,28 @@ public class PriceIntrinio {
             return allVal.get(0);
         }
         return 0;
+    }
+
+    private static ArrayList<Double> extractOther(String jsonResponse){
+        ArrayList<Double> allPrice = new ArrayList<>();
+        try {
+            JSONObject mainObject = new JSONObject(jsonResponse);
+            JSONArray dataArray = mainObject.getJSONArray("data");
+            for (int i = 0; i < 1; i++)
+            {
+                JSONObject temp = dataArray.getJSONObject(i);
+                allPrice.add(temp.getDouble("open"));
+                allPrice.add(temp.getDouble("high"));
+                allPrice.add(temp.getDouble("low"));
+                allPrice.add(temp.getDouble("close"));
+                allPrice.add(temp.getDouble("volume"));
+                allPrice.add(temp.getDouble("ex_dividend"));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return allPrice;
     }
 
     private static ArrayList<Double> extractPrice(String jsonResponse){
