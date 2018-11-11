@@ -37,7 +37,8 @@
         <activity android:name=".ResultRiskArbitrageActivity" />
         <activity android:name=".GlobalMacro" />
         <activity android:name=".ResultGlobalMacroActivity" />
-        <activity android:name=".SelectCompanyGlobalMacro"></activity>
+        <activity android:name=".SelectCompanyGlobalMacro" />
+        <activity android:name=".Deposit"></activity>
     </application>
 
 </manifest>

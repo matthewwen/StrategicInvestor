@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Deposit">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Deposit"
+        android:textAlignment="center"
+        android:textColor="@color/home_tab_selected_text_color"
+        android:textSize="30sp"
+        android:paddingTop="20dp"
+        android:paddingBottom="40dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Transaction Authorized and secured by Authorize.net"
+        android:textColor="@color/home_tab_selected_text_color"
+        android:paddingBottom="40dp"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="40dp"
+        android:paddingBottom="160dp"
+        android:paddingHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Deposit Amount"
+            android:textColor="@color/home_tab_selected_text_color"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="160sp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/home_tab_selected_text_color"
+            android:ems="10"
+            android:fontFamily="sans-serif-condensed"
+            android:textAlignment="textEnd"
+            android:textColor="@color/home_tab_selected_text_color" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnDeposit"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif"
+        android:text="Authorize"
+        android:textColor="@android:color/white"
+        android:typeface="normal" />
+
+</android.widget.LinearLayout>
