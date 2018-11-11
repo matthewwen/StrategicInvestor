@@ -20,29 +20,8 @@ public class CompanyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
 
-        LineChart chart = (LineChart) findViewById(R.id.chart);
 
-        ArrayList<Float> prices = new ArrayList<>();
 
-        //YourData[] dataObjects = ...;
-
-        List<Entry> entries = new ArrayList<>();
-        Collections.reverse(entries);
-
-        for (int i = 0; i < prices.size(); i++) {
-
-            // turn your data into Entry objects
-            entries.add(new Entry(prices.get(i), (float)(i)));
-        }
-/*
-        LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
-        //dataSet.setColor(...);
-        //dataSet.setValueTextColor(...);
-
-        LineData lineData = new LineData(dataSet);
-        chart.setData(lineData);
-        chart.invalidate(); // refresh
-        */
     }
 
 }
