@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.strategicinvestor.strategicinvestor.adapter.SelectCompanyAdapter;
 import com.strategicinvestor.strategicinvestor.fragment.CompaniesFragment;
 
-public class SelectCompany extends AppCompatActivity implements SelectCompanyAdapter.SelectCompany{
+public class SelectCompanyRiskArbitrage extends AppCompatActivity implements SelectCompanyAdapter.SelectCompany{
 
     boolean selected2;
     boolean selected1;
@@ -20,7 +20,7 @@ public class SelectCompany extends AppCompatActivity implements SelectCompanyAda
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_company);
+        setContentView(R.layout.activity_select_company_risk_arbit);
 
         int option = 1;
         if (getIntent() != null){

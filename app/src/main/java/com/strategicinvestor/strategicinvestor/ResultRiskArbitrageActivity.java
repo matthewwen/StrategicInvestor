@@ -22,6 +22,13 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_risk_arbitrage);
 
+        String tick1 = "";
+        String tick2 = "";
+        if (getIntent() != null){
+            tick1 = getIntent().getStringExtra("TICK1");
+            tick2 = getIntent().getStringExtra("TICK2");
+        }
+
         ArrayList<Double> val1 = new ArrayList<>();
         ArrayList<Double> val2 = new ArrayList<>();
 
