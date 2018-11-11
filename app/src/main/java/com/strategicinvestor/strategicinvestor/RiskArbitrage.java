@@ -86,6 +86,19 @@ public class RiskArbitrage extends AppCompatActivity {
                 finish();
             }
         } );
+
+        Button showAnaylis = findViewById(R.id.btnDone);
+        showAnaylis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selected1 && selected2){
+                    Intent intent = new Intent(RiskArbitrage.this, ResultRiskArbitrageActivity.class);
+                    intent.putExtra("TICK1", tick1);
+                    intent.putExtra("TICK2", tick2);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
 
