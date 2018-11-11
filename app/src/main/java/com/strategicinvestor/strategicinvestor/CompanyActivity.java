@@ -1,6 +1,7 @@
 package com.strategicinvestor.strategicinvestor;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,13 +22,15 @@ import java.util.List;
 import static com.strategicinvestor.strategicinvestor.intrinio.PriceIntrinio.fetchOther;
 import static com.strategicinvestor.strategicinvestor.intrinio.PriceIntrinio.fetchPrice90;
 
-//import com.github.mikephil.charting.charts.LineChart;
-//import com.github.mikephil.charting.data.Entry;
-//import com.github.mikephil.charting.data.LineData;
-//import com.github.mikephil.charting.data.LineDataSet;
-//
-//import java.util.ArrayList;
-//import java.util.List;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompanyActivity extends AppCompatActivity {
 
@@ -84,6 +87,45 @@ public class CompanyActivity extends AppCompatActivity {
                 closePrice.setText(String.valueOf(otherData.get(3)));
                 volStock.setText(String.valueOf(otherData.get(4)));
                 dividendStock.setText(String.valueOf(otherData.get(5)));
+
+                LineChart chart = (LineChart) findViewById(R.id.chart);
+                //chart.setViewPortOffsets(0, 0, 0, 0);
+                //chart.setBackgroundColor(Color.rgb(104, 241, 175));
+                //chart.getDescription().setEnabled(false);
+                //chart.setDrawGridBackground(false);
+                //chart.setMaxHighlightDistance(300);
+                //chart.getLegend().setEnabled(false);
+                XAxis x = chart.getXAxis();
+                x.setEnabled(false);
+
+                YAxis y = chart.getAxisLeft();
+                //y.setTypeface(tfLight);
+                y.setLabelCount(6, false);
+                y.setTextColor(Color.WHITE);
+                y.setPosition(YAxis.YAxisLabelPosition.INSIDE_CHART);
+                y.setDrawGridLines(false);
+                y.setAxisLineColor(Color.WHITE);
+
+                chart.getAxisRight().setEnabled(false);
+
+                //chart.animateXY(2000, 2000);
+
+                List<Entry> entries = new ArrayList<>();
+                for (int i = 0; i < prices.size(); i++) {
+                    // turn your data into Entry objects
+                    entries.add(new Entry((float)(i), (float)prices.get(i).doubleValue()));
+                }
+                //Collections.reverse(entries);
+                LineDataSet dataSet = new LineDataSet(entries, "Stock Price"); // add entries to dataset
+                //dataSet.setColor(...);
+                //dataSet.setValueTextColor(...);
+
+                LineData lineData = new LineData(dataSet);
+                //lineData.setValueTextColor(Color.WHITE);
+                lineData.setDrawValues(false);
+
+                chart.setData(lineData);
+                chart.invalidate(); // refresh
             }
         };
 
@@ -91,30 +133,7 @@ public class CompanyActivity extends AppCompatActivity {
 
 
 
-//        LineChart chart = (LineChart) findViewById(R.id.chart);
-//
-//        //YourData[] dataObjects = ...;
-//
-//        //YourData[] dataObjects = ...;
-//
-//        List<Entry> entries = new ArrayList<>();
-//        Collections.reverse(entries);
 
-
-
-//        for (int i = 0; i < prices.size(); i++) {
-//
-//            // turn your data into Entry objects
-//            entries.add(new Entry((float)prices.get(i).doubleValue(), (float)(i)));
-//        }
-//
-//        LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
-//        //dataSet.setColor(...);
-//        //dataSet.setValueTextColor(...);
-//
-//        LineData lineData = new LineData(dataSet);
-//        chart.setData(lineData);
-//        chart.invalidate(); // refresh
 
     }
 
