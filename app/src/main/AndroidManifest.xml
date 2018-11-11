@@ -28,6 +28,10 @@
         <activity android:name=".AddCompany"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".RiskArbitrage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SelectCompany"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

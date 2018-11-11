@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class StrategiesAdapter extends RecyclerView.Adapter<StrategiesAdapter.StrategiesViewModel> {
 
     private ArrayList<String> allStrategies;
+    private ChooseStratergy stratergy;
 
-    public StrategiesAdapter(ArrayList<String> allStrategies)
+    public StrategiesAdapter(ArrayList<String> allStrategies, ChooseStratergy stratergy)
     {
         this.allStrategies = allStrategies;
+        this.stratergy = stratergy;
     }
 
     @NonNull
@@ -30,6 +32,12 @@ public class StrategiesAdapter extends RecyclerView.Adapter<StrategiesAdapter.St
     @Override
     public void onBindViewHolder(@NonNull StrategiesViewModel strategiesViewModel, int i) {
         strategiesViewModel.strategy.setText(allStrategies.get(i));
+        strategiesViewModel.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stratergy.selectStrat(i);
+            }
+        });
     }
 
     @Override
@@ -40,10 +48,16 @@ public class StrategiesAdapter extends RecyclerView.Adapter<StrategiesAdapter.St
     class StrategiesViewModel extends RecyclerView.ViewHolder{
 
         TextView strategy;
+        View view;
 
         StrategiesViewModel(@NonNull View itemView) {
             super(itemView);
             strategy = itemView.findViewById(R.id.ste_name_tv);
+            view = itemView;
         }
+    }
+
+    public interface ChooseStratergy{
+        void selectStrat(int pos);
     }
 }

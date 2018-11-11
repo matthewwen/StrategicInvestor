@@ -26,7 +26,7 @@ public class PriceIntrinio {
     private static final String AUTHENTICATION = "api_key";
     private static final String IDENTIFIER = "identifier";
     private static final String FREQUENCY = "frequency";
-    private static final String KEY = "OjNmYTdiZTVlYTExNTAxYTEzN2RhNTM1ZTZlMGM2NDhi";
+    private static final String KEY = "OjBmYzhiODljZDZlMTVlYmU1Y2Y1YTY2Y2NmMWYxM2Q3";
     private static final String START_DATE = "start_date";
 
     private static final String TAG = PriceIntrinio.class.getSimpleName();

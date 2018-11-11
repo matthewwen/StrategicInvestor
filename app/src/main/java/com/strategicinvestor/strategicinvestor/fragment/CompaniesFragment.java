@@ -108,4 +108,14 @@ public class CompaniesFragment extends Fragment implements UserCompanyAdapter.Us
 
         return false;
     }
+
+    public static ArrayList<Company> allCompany(){
+        ArrayList<Company> arrayList = new ArrayList<>();
+        for (int i = 0; i <company_ticks.size(); i++){
+            Company company = new Company(company_names.get(i), company_ticks.get(i), 0.0, false);
+            arrayList.add(company);
+        }
+
+        return arrayList;
+    }
 }
