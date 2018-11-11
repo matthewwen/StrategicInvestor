@@ -53,4 +53,11 @@ dependencies {
     implementation 'com.algolia:algoliasearch-android:3.26.1'
     implementation files('libs/IntrinioRealTime-2.1.0.jar')
     implementation files('libs/gson-2.4.jar')
+
+//    implementation 'com.google.api-client:google-api-client-android:1.20.0' exclude module: 'httpclient'
+//    implementation 'com.google.http-client:google-http-client-gson:1.20.0' exclude module: 'httpclient'
+//    implementation 'com.google.apis:google-api-services-vision:v1-rev2-1.21.0' exclude module: 'httpclient'
+//    implementation 'com.google.code.gson:gson:2.8.3'
+//    implementation 'com.loopj.android:android-async-http:1.4.9'
+//    implementation 'cz.msebera.android:httpclient:4.4.1.2'
 }

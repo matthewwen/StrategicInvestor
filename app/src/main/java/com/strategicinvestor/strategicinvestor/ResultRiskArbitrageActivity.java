@@ -129,7 +129,7 @@ public class ResultRiskArbitrageActivity extends AppCompatActivity {
                 chart2.invalidate(); // refresh
             }
         };
-        mAsnyc.execute(); 
+        mAsnyc.execute();
 
 
     }
