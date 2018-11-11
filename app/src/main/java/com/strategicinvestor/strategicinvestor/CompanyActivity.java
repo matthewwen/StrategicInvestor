@@ -114,7 +114,7 @@ public class CompanyActivity extends AppCompatActivity {
                 List<Entry> entries = new ArrayList<>();
                 for (int i = 0; i < prices.size(); i++) {
                     // turn your data into Entry objects
-                    entries.add(new Entry((float)(i), (float)prices.get(i).doubleValue()));
+                    entries.add(new Entry((float)(prices.size() - 1 - i), (float)prices.get(i).doubleValue()));
                 }
                 //Collections.reverse(entries);
                 LineDataSet dataSet = new LineDataSet(entries, "Stock Price"); // add entries to dataset
