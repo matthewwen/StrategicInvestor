@@ -1,15 +1,16 @@
 package com.strategicinvestor.strategicinvestor;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
+//import com.github.mikephil.charting.charts.LineChart;
+//import com.github.mikephil.charting.data.Entry;
+//import com.github.mikephil.charting.data.LineData;
+//import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,17 +51,19 @@ public class CompanyActivity extends AppCompatActivity {
 
         Log.v(CompanyActivity.class.getSimpleName(), tick);
 
+        //AsyncTask<Void, Void, Void>
+
         ArrayList<Double> prices = fetchPrice90(tick);
         ArrayList<Double> otherData = fetchOther(tick);
 
-        LineChart chart = (LineChart) findViewById(R.id.chart);
-
-        //YourData[] dataObjects = ...;
-
-        //YourData[] dataObjects = ...;
-
-        List<Entry> entries = new ArrayList<>();
-        Collections.reverse(entries);
+//        LineChart chart = (LineChart) findViewById(R.id.chart);
+//
+//        //YourData[] dataObjects = ...;
+//
+//        //YourData[] dataObjects = ...;
+//
+//        List<Entry> entries = new ArrayList<>();
+//        Collections.reverse(entries);
         tickerSym = findViewById(R.id.ticker_sym);
         openPrice = findViewById(R.id.open_price);
         closePrice = findViewById(R.id.close_price);
@@ -76,19 +79,19 @@ public class CompanyActivity extends AppCompatActivity {
         volStock.setText(String.valueOf(otherData.get(4)));
         dividendStock.setText(String.valueOf(otherData.get(5)));
 
-        for (int i = 0; i < prices.size(); i++) {
-
-            // turn your data into Entry objects
-            entries.add(new Entry((float)prices.get(i).doubleValue(), (float)(i)));
-        }
-
-        LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
-        //dataSet.setColor(...);
-        //dataSet.setValueTextColor(...);
-
-        LineData lineData = new LineData(dataSet);
-        chart.setData(lineData);
-        chart.invalidate(); // refresh
+//        for (int i = 0; i < prices.size(); i++) {
+//
+//            // turn your data into Entry objects
+//            entries.add(new Entry((float)prices.get(i).doubleValue(), (float)(i)));
+//        }
+//
+//        LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
+//        //dataSet.setColor(...);
+//        //dataSet.setValueTextColor(...);
+//
+//        LineData lineData = new LineData(dataSet);
+//        chart.setData(lineData);
+//        chart.invalidate(); // refresh
 
     }
 
