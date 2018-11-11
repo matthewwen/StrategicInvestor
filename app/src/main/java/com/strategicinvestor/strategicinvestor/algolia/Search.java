@@ -18,32 +18,35 @@ import java.util.ArrayList;
 
 public class Search {
 
-    public static ArrayList<Company> algoliaQuery(String search) {
-        ArrayList<Company> allCompany = new ArrayList<>();
+    public static void algoliaQuery(String search, Listener listener) {
+        ArrayList<Company> allComp = new ArrayList<>();
         Client client = new Client("91WCKSBFTE", "29ddfa0c991845808986cf2d56cb93c2");
         Index index = client.getIndex("company_symbols");
 
-        CompletionHandler completionHandler = new CompletionHandler() {
-            @Override
-            public void requestCompleted(JSONObject jsonObject, AlgoliaException e) {
-                try {
-                    JSONArray hitsArray = jsonObject.getJSONArray("hits");
-                    for (int i = 0; i < hitsArray.length(); i++)
-                    {
-                        JSONObject temp = hitsArray.getJSONObject(i);
-                        String name = temp.getString("Company Name");
-                        String tick = temp.getString("Symbol");
-                        Company tempCompany = new Company(name, tick, 5, false);
-                        allCompany.add(tempCompany);
-                    }
-                } catch (JSONException e1) {
-                    e1.printStackTrace();
+        CompletionHandler completionHandler = (jsonObject, e) -> {
+            try {
+                JSONArray hitsArray = jsonObject.getJSONArray("hits");
+                for (int i = 0; i < hitsArray.length(); i++)
+                {
+                    JSONObject temp = hitsArray.getJSONObject(i);
+                    String name = temp.getString("Company Name");
+                    String tick = temp.getString("Symbol");
+                    Log.v(Search.class.getSimpleName(), "Name: " + name);
+                    Company tempCompany = new Company(name, tick, 5, false);
+                    allComp.add(tempCompany);
                 }
+                listener.onResultRecieve(allComp);
+
+            } catch (JSONException e1) {
+                e1.printStackTrace();
             }
         };
 
         index.searchAsync(new Query(search), completionHandler);
 
-        return allCompany;
+    }
+
+    public interface Listener{
+         void onResultRecieve(ArrayList<Company> allCompany);
     }
 }
