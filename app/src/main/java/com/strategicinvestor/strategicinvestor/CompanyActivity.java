@@ -82,7 +82,8 @@ public class CompanyActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                openPrice.setText(String.valueOf(otherData.get(0)));
+                String priceAtOpen = "$" + String.valueOf(otherData.get(0));
+                openPrice.setText(priceAtOpen);
                 highPrice.setText(String.valueOf(otherData.get(1)));
                 lowPrice.setText(String.valueOf(otherData.get(2)));
                 closePrice.setText(String.valueOf(otherData.get(3)));

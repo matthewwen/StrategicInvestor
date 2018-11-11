@@ -36,7 +36,8 @@ public class UserCompanyAdapter extends RecyclerView.Adapter<UserCompanyAdapter.
     public void onBindViewHolder(@NonNull UserCompanyViewModel userCompanyViewModel, int i) {
         userCompanyViewModel.tickerTV.setText(allCompany.get(i).getTicker());
         userCompanyViewModel.nameTV.setText(allCompany.get(i).getName());
-        userCompanyViewModel.priceTV.setText(String.valueOf(allCompany.get(i).getPrice()));
+        String currPrice = "$" + String.valueOf(allCompany.get(i).getPrice());
+        userCompanyViewModel.priceTV.setText(currPrice);
         if(allCompany.get(i).getColor() >= 1) {
             userCompanyViewModel.priceTV.setTextColor(Color.GREEN);
         } else if(allCompany.get(i).getColor() <= 1) {
