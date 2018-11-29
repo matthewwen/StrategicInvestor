@@ -42,7 +42,7 @@ class RiskArbitrageDataWrapper(DataWrapper):
 # TODO
 class GlobalMacroDataWrapper(DataWrapper):
     """
-    Wrapper class for Data required to train ML model for risk arbitrage
+    Wrapper class for Data required to train ML model for global macro strategy
     """
     def __init__(self):
         super().__init__()
